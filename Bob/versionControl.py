@@ -1,11 +1,13 @@
 #versionControl - Everthing to do with the version type and tests
+import os
+
+path = __file__.replace("versionControl.py", "")
 
 def getVersion():
-    path = "C:/Users/PC/OneDrive/Documents/Programming Stuff/Laboratory/Python/Bob/version.txt"
     prefix = "TESTING "
-    file = open(path, "r")
+    file = open(path + "version.txt", "r")
     version = round(float(file.read()), 4)
     file.close()
-    file = open(path, "w") #comment out when published
-    file.write(str(version + 0.001)) #comment out when published
+    file = open(path + "version.txt", "w")
+    file.write(str(version + 0.001))
     return prefix + str(version)
